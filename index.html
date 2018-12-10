@@ -1,0 +1,158 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="utf-8">
+    <title>autolive</title>
+    <script>
+        ! function () {
+            function e(e) {
+                e.target && /^(input|textarea|a)$/i.test(e.target.tagName) || e.preventDefault()
+            }
+
+            var t = 400,
+                n = screen.width / t,
+                i = '<meta name="viewport" content="width=' + t + ", initial-scale=" + n + ", maximum-scale=" + n +
+                ", minimum-scale=" + n + ', user-scalable=no, target-densitydpi=device-dpi, minimal-ui" />';
+            document.write(i)
+        }();
+    </script>
+    <link rel="stylesheet" href="./css/animate.min.css">
+    <link rel="stylesheet" href="./css/keyframes.css">
+    <link rel="stylesheet" href="./css/swiper.min.css">
+    <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+    <!-- Swiper -->
+    <canvas id="app" style="background-image: url(./images/bg1.jpg);"></canvas>
+    <div class="swiper-container no-visible">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-no-swiping" id="page1">
+                <!--汽车页面-->
+                <button class="main-btn btn1" style="font-size:14px;">click1</button>
+                <button class="main-btn btn2" style="font-size:14px;">click2</button>
+            </div>
+            <div class="swiper-slide  swiper-no-swiping catergorty" id="page2">
+                <!--目录一-->
+                <div class="title">方向盘</div>
+                <div class="logo"></div>
+                <ul class="catergory-list">
+                    <li class="catergory-item">超纤皮方向盘</li>
+                    <li class="catergory-item">振动方向盘</li>
+                    <li class="catergory-item">加热方向盘</li>
+                    <li class="catergory-item">HOD方向盘</li>
+                    <li class="catergory-item">zForce光感技术方向盘</li>
+                </ul>
+                <div class="back">返回</div>
+            </div>
+            <div class="swiper-slide content" id="page3">
+                <div class="logo"></div>
+                <div class="back">返回</div>
+            </div>
+            <div class="swiper-slide" id="page4">
+                <div class="image-wrap logo">
+                    <img lazy-src="./images/logo_03.png">
+                </div>
+                <div class="image-wrap text1 fadeIn">
+                    <img lazy-src="./images/text5.png">
+                </div>
+            </div>
+            <div class="swiper-slide content" id="page5">
+                <div class="image-wrap logo">
+                    <img lazy-src="./images/logo_03.png">
+                </div>
+                
+                <div class="image-wrap decorator2">
+                    <img lazy-src="./images/decorator2.png">
+                </div>
+                <button class="back">返回</button>
+            </div>
+            <div class="swiper-slide  swiper-no-swiping catergorty" id="page6">
+                <!--目录一-->
+                <div class="title">安全带</div>
+                <div class="logo"></div>
+                <ul class="catergory-list">
+                    <li class="catergory-item">主动式预紧安全带 PPMI</li>
+                    <li class="catergory-item">特殊外观织带</li>
+                    <li class="catergory-item">R200.2 RPC卷收器</li>
+                    <li class="catergory-item">发光锁扣</li>
+                    <li class="catergory-item">K12S插锁</li>
+                    <li class="catergory-item">腰部预紧端片PLP3.1 </li>
+                    <li class="catergory-item">腰部预紧端片PLP1.5</li>
+                    <li class="catergory-item">高度调节器HA70</li>
+                    <li class="catergory-item">电控升降插锁EBP</li>
+                    <li class="catergory-item">空心织带</li>
+                </ul>
+                <div class="back">返回</div>
+            </div>
+            <div class="swiper-slide content" id="page7">
+                <button class="back">返回</button>
+            </div>
+            <div class="swiper-slide content" id="page8">
+                <button class="back">返回</button>
+            </div>
+            <div class="swiper-slide  swiper-no-swiping catergorty" id="page9">
+                <!--目录一-->
+                <div class="title">主驾气囊</div>
+                <div class="logo"></div>
+                <ul class="catergory-list">
+                    <li class="catergory-item">主驾气囊真皮罩盖</li>
+                    <li class="catergory-item">小尺寸主驾气囊</li>
+                    <li class="catergory-item">主驾气囊浮动罩盖</li>
+                    <li class="catergory-item">模块减振</li>
+                    <li class="catergory-item">ATE3 气体发生器</li>
+                    <li class="catergory-item">ADP1.3B 气体发生器 </li>
+                    <li class="catergory-item">ADPS1.5 气体发生器</li>
+                </ul>
+                <div class="back">返回</div>
+            </div>
+            <div class="swiper-slide  swiper-no-swiping catergorty" id="page10">
+                <!--目录一-->
+                <div class="title">特殊安全</div>
+                <div class="logo"></div>
+                <ul class="catergory-list">
+                    <li class="catergory-item">集成式儿童增高座垫</li>
+                    <li class="catergory-item">PSS断电安全保护开关</li>
+                </ul>
+                <div class="back">返回</div>
+            </div>
+            <div class="swiper-slide  swiper-no-swiping catergorty" id="page11">
+                <!--目录一-->
+                <div class="title">侧气囊&气帘</div>
+                <div class="logo"></div>
+                <ul class="catergory-list">
+                    <li class="catergory-item">3D热压成型座椅侧气囊</li>
+                    <li class="catergory-item">远端侧气囊</li>
+                    <li class="catergory-item">Life-Cell全面包裹侧气囊</li>
+                    <li class="catergory-item">PPA-行人保护气囊</li>
+                    <li class="catergory-item">引擎盖顶升机构HL</li>
+                    <li class="catergory-item">ASP5.1B P12气体发生器 </li>
+                </ul>
+                <div class="back">返回</div>
+            </div>
+            <div class="swiper-slide  swiper-no-swiping catergorty" id="page12">
+                <!--目录一-->
+                <div class="title">主驾气囊</div>
+                <div class="logo"></div>
+                <ul class="catergory-list">
+                    <li class="catergory-item">主驾气囊真皮罩盖</li>
+                    <li class="catergory-item">小尺寸主驾气囊</li>
+                    <li class="catergory-item">主驾气囊浮动罩盖</li>
+                    <li class="catergory-item">模块减振</li>
+                    <li class="catergory-item">ATE3 气体发生器</li>
+                    <li class="catergory-item">ADP1.3B 气体发生器 </li>
+                    <li class="catergory-item">ADPS1.5 气体发生器</li>
+                </ul>
+                <div class="back">返回</div>
+            </div>
+        </div>
+    </div>
+    <script src="./js/jquery-1.8.3.min.js"></script>
+    <script src="./js/swiper.min.js"></script>
+    <script type="text/javascript" src="https://code.createjs.com/preloadjs-0.6.2.min.js"></script>
+    <script src="./js/index.js"></script>
+    <!--<script src="http://172.18.38.35:9999/target/target-script-min.js#anonymous"></script>-->
+</body>
+
+</html>
