@@ -179,36 +179,52 @@ $(function () {
     }
 
     // 目录页码
-    const CatergoryIndex = [1, 5, 9];
+    const CatergoryIndex = [1, 7, 18, 26, 35, 42];
     // 内容页起始页
-    const ContentStartIndex = [2, 6];
+    const ContentStartIndex = [2, 8, 19, 27, 36, 43];
 
     var swiper;
+    var disableNextIndexArr = [6, 17, 25, 34, 41, 45];
+    var disablePreIndexArr = [2, 8, 19, 27, 36, 43];
 
     function createSwiper() {
-        var disableNextIndexArr = [4];
-        var disablePreIndexArr = [2];
+
         $('.swiper-container').removeClass('no-visible');
         $('#app').addClass('no-visible');
         swiper = new Swiper('.swiper-container', {
             // Enable debugger
             loop: false,
             debugger: false,
+            prevButton: '.swiper-button-prev',
+            nextButton: '.swiper-button-next',
             onSlideChangeEnd: function (swiper) {
                 if (disableNextIndexArr.includes(swiper.activeIndex)) {
+                    console.log(swiper.activeIndex);
+                    $('.swiper-button-next').css('display', 'none');
                     swiper.lockSwipeToNext();
                 } else {
+                    console.log(swiper.activeIndex);
+
+                    $('.swiper-button-next').css('display', 'block');
                     swiper.unlockSwipeToNext();
                 }
 
                 if (disablePreIndexArr.includes(swiper.activeIndex)) {
-                    swiper.lockSwiperToPrev();
+                    console.log(swiper.activeIndex);
+                    $('.swiper-button-prev').css('display', 'none');
+                    swiper.lockSwipeToPrev();
+
                 } else {
+                    console.log(swiper.activeIndex);
+                    $('.swiper-button-prev').css('display', 'block');
                     swiper.unlockSwipeToPrev();
                 }
                 console.log(swiper.activeIndex);
             }
         });
+        $('.swiper-button-prev').css('display', 'none');
+        $('.swiper-button-next').css('display', 'none');
+
     }
 
     const TIME = 200;
@@ -217,6 +233,37 @@ $(function () {
     function slideTo(num) {
         swiper.unlockSwipeToNext();
         swiper.unlockSwipeToPrev();
+        
+        
+        if (disableNextIndexArr.includes(num)) {
+            console.log('fd1');
+            $('.swiper-button-next').css('display', 'none');
+            swiper.lockSwipeToNext();
+        } else {
+                console.log('fd2');
+
+            $('.swiper-button-next').css('display', 'block');
+            swiper.unlockSwipeToNext();
+        }
+
+        if (disablePreIndexArr.includes(num)) {
+            $('.swiper-button-prev').css('display', 'none');
+            swiper.lockSwipeToPrev();
+                        console.log('fd3');
+
+        } else {
+            $('.swiper-button-prev').css('display', 'block');
+            swiper.unlockSwipeToPrev();
+                        console.log('fd4');
+
+        }
+
+        if (CatergoryIndex.includes(num) || num === 0) {
+                        console.log('fd5');
+
+            $('.swiper-button-next').css('display', 'none');
+            $('.swiper-button-prev').css('display', 'none');   
+        }
         swiper.slideTo(num, TIME, false);
     }
 
@@ -229,14 +276,15 @@ $(function () {
 
         // 目录返回到起点
         $('.catergorty .back').click(function () {
-            swiper.slideTo(0, TIME, false);
+            slideTo(0);
+            $('.swiper-button-prev').css('display', 'none');
+            $('.swiper-button-next').css('display', 'none');
         });
 
         // 内容返回
         $('.content .back').click(function () {
             let num = $(this).parent().index();
             let caterIndex = 1;
-            console.log('cat');
             for (var len = 0; len < CatergoryIndex.length; len++) {
                 if (num < CatergoryIndex[len]) {
                     caterIndex = CatergoryIndex[len - 1];
@@ -248,7 +296,9 @@ $(function () {
             }
             console.log(caterIndex);
 
-            swiper.slideTo(caterIndex, TIME, false);
+            slideTo(caterIndex);
+            $('.swiper-button-prev').css('display', 'none');
+            $('.swiper-button-next').css('display', 'none');
         });
 
         // 点击目录到对应页面
