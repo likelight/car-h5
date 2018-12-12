@@ -42,31 +42,115 @@ body {
     /*position: absolute;*/
 }
 
-.bg {
+
+
+.car-main {
+    background: url(../images/abg.jpg) no-repeat;
+    background-size: cover;
+}
+
+.car {
     position: absolute;
-    left: 0;
-    width: 403px;
-    height: 675px;
-    top: -5px;
+    top: 20%;
+    left: 0%;
+    background: url(../images/car1_04.png) no-repeat;
+    background-size: cover;
+    width: 428px;
+    height: 354px;
 }
 
-#page1 {
-    background: url(../images/bg_1.jpg) no-repeat;
-    background-size: contain;
-}
-#page1 .text1 {
-    margin-top: 10%;
-    width: 80%;
-    left: 50px;
-    top: 120px;
-    z-index: 5;
+.car .point {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 10px;
+    background: #ffff3f;
+    opacity: 0.9;                                   /* 不透明度 */
+    overflow: hidden;                               /* 溢出隐藏 */
+    /*box-shadow: 0px 0px 20px 10px rgba(222, 222,130,0.8);                             外边距 */
+    /* IE10、Firefox and Opera，IE9以及更早的版本不支持 */
+    animation-name: breath;                         /* 动画名称 */
+    animation-duration: 3s;                         /* 动画时长3秒 */
+    animation-timing-function: ease-in-out;         /* 动画速度曲线：以低速开始和结束 */
+    animation-iteration-count: infinite;            /* 播放次数：无限 */
+ 
+    /* Safari and Chrome */
+    -webkit-animation-name: breath;                 /* 动画名称 */
+    -webkit-animation-duration: 3s;                 /* 动画时长3秒 */
+    -webkit-animation-timing-function: ease-in-out; /* 动画速度曲线：以低速开始和结束 */
+    -webkit-animation-iteration-count: infinite; 
 }
 
-#page1 .bottom {
-    bottom: 0;
-    width: 100%;
+
+@keyframes breath {
+    from {  box-shadow: none; }                          /* 动画开始时的不透明度 */
+    50%  { box-shadow: 0px 0px 10px 10px rgba(222, 222,130,0.8);                            /* 外边距 */}                          /* 动画50% 时的不透明度 */
+    to   {  box-shadow: none; }                          /* 动画结束时的不透明度 */    
+}
+.point1 {
+    top: 116px;
+    left: 258px;;
 }
 
+.point2 {
+    top: 107px;
+    left: 205px;
+}
+
+.point3 {
+    top: 97px;
+    left: 246px;
+}
+
+.point4 {
+    top: 165px;
+    left: 190px;
+}
+
+.point5 {
+   top: 116px;
+    left: 180px;
+}
+
+.point6 {
+    top: 209px;
+    left: 241px;;
+}
+
+.text {
+    position: absolute;
+    font-size: 14px;
+}
+
+.text1 {
+    top: 91px;
+    left: 17px;
+}
+
+.text2 {
+        top: 150px;
+    left: 76px;;
+}
+
+.text3 {
+    top: 200px;
+    left: 100px;;
+}
+
+.text4 {
+    top: 250px;
+    left: 105px;
+}
+
+.text5 {
+    top: 45px;
+    left: 298px;
+}
+
+.text6 {
+        left: 330px;
+    top: 80px;
+}
 
 .catergorty {
     background: url(../images/abg.jpg) no-repeat;
@@ -101,16 +185,16 @@ body {
 
 .content .describe {
     margin-left: 15px;
-    padding: 0 15px;
-    margin-top: 30px;
+    padding: 0 25px;
+    margin-top: 60px;
     font-size: 16px;
     text-align: left;
 }
 
 .describe li {
-    line-height: 30px;
+    line-height: 20px;
     padding: 0px;
-    margin-bottom: 15px;
+    margin-bottom: 5px;
 }
 
 
@@ -119,8 +203,8 @@ body {
     position: absolute;
     bottom: 20px;
     right: 20px;
-    width: 126px;
-    height: 43px;
+    width: 84px;
+    height: 29px;
     background: url(../images/logo.png) no-repeat;
     background-size: contain;
 }
@@ -153,43 +237,7 @@ body {
     font-size: 18px;
 }
 
-#page3 {
-    background: url(../images/bg2.jpg) no-repeat;
-    background-size: contain;
-}
 
-#page3 .text1 {
-    margin-top: 10%;
-    width: 60%;
-    left: 100px;
-    top: 120px;
-    z-index: 5;
-}
-
-#page4 .text-content1 {
-    width: 60%;
-    left: 100px;
-    top: 140px;
-    z-index: 5;
-}
-#page4 .text-content2 {
-    width: 80%;
-    left: 40px;
-    top: 270px;
-    z-index: 5;
-}
-
-#page4 .decorator1 {
-    bottom: 18%;
-    right: 40%;
-    width: 52%;
-}
-
-#page4  .decorator2 {
-    bottom: 0;
-    right: 0;
-    width: 51%;
-}
 
 /*.image-wrap {
     position: absolute;

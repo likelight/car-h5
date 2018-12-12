@@ -157,10 +157,14 @@ $(function () {
     function preloadImg() {
         var queue = new createjs.LoadQueue();
         var mainfest = new Set();
+        var bgArr = ['./images/abg.jpg', './images/car1_03.png', './images/logo.png'];
         $('img[lazy-src]').each(function (i, dom) {
             mainfest.add(dom.getAttribute('lazy-src'));
         });
-        queue.loadManifest(Array.from(mainfest));
+        var sourceArr = Array.from(mainfest);
+        var finalList = [...sourceArr, ...bgArr];
+        console.log(finalList);
+        queue.loadManifest(Array.from(finalList));
         queue.on('progress', handleProgress);
         queue.on('complete', handleComplete, this);
     }
@@ -188,7 +192,6 @@ $(function () {
     var disablePreIndexArr = [2, 8, 19, 27, 36, 43];
 
     function createSwiper() {
-
         $('.swiper-container').removeClass('no-visible');
         $('#app').addClass('no-visible');
         swiper = new Swiper('.swiper-container', {
@@ -199,27 +202,22 @@ $(function () {
             nextButton: '.swiper-button-next',
             onSlideChangeEnd: function (swiper) {
                 if (disableNextIndexArr.includes(swiper.activeIndex)) {
-                    console.log(swiper.activeIndex);
                     $('.swiper-button-next').css('display', 'none');
                     swiper.lockSwipeToNext();
                 } else {
-                    console.log(swiper.activeIndex);
 
                     $('.swiper-button-next').css('display', 'block');
                     swiper.unlockSwipeToNext();
                 }
 
                 if (disablePreIndexArr.includes(swiper.activeIndex)) {
-                    console.log(swiper.activeIndex);
                     $('.swiper-button-prev').css('display', 'none');
                     swiper.lockSwipeToPrev();
 
                 } else {
-                    console.log(swiper.activeIndex);
                     $('.swiper-button-prev').css('display', 'block');
                     swiper.unlockSwipeToPrev();
                 }
-                console.log(swiper.activeIndex);
             }
         });
         $('.swiper-button-prev').css('display', 'none');
@@ -227,7 +225,7 @@ $(function () {
 
     }
 
-    const TIME = 200;
+    const TIME = 100;
 
     // 滑动到具体某一页 
     function slideTo(num) {
@@ -236,12 +234,12 @@ $(function () {
         
         
         if (disableNextIndexArr.includes(num)) {
-            console.log('fd1');
             $('.swiper-button-next').css('display', 'none');
-            swiper.lockSwipeToNext();
+            swiper.slideTo(num, TIME, false);
+            setTimeout(function() {
+                swiper.lockSwipeToNext();
+            }, 300);
         } else {
-                console.log('fd2');
-
             $('.swiper-button-next').css('display', 'block');
             swiper.unlockSwipeToNext();
         }
@@ -249,18 +247,13 @@ $(function () {
         if (disablePreIndexArr.includes(num)) {
             $('.swiper-button-prev').css('display', 'none');
             swiper.lockSwipeToPrev();
-                        console.log('fd3');
-
         } else {
             $('.swiper-button-prev').css('display', 'block');
             swiper.unlockSwipeToPrev();
-                        console.log('fd4');
 
         }
 
         if (CatergoryIndex.includes(num) || num === 0) {
-                        console.log('fd5');
-
             $('.swiper-button-next').css('display', 'none');
             $('.swiper-button-prev').css('display', 'none');   
         }
@@ -269,8 +262,14 @@ $(function () {
 
     function addCatergoryEvent() {
         // 目录事件
-        $('.main-btn').click(function () {
+        $('.point').click(function () {
             let num = $(this).index();
+            slideTo(CatergoryIndex[num]);
+        });
+
+        $('.text').click(function () {
+            let num = $(this).index() - 6;
+            console.log(num);
             slideTo(CatergoryIndex[num]);
         });
 
@@ -294,7 +293,6 @@ $(function () {
             if (len === CatergoryIndex.length) {
                 caterIndex = CatergoryIndex[len - 1];
             }
-            console.log(caterIndex);
 
             slideTo(caterIndex);
             $('.swiper-button-prev').css('display', 'none');
@@ -311,7 +309,6 @@ $(function () {
                 if (result > -1) {
                     startIndex = ContentStartIndex[result];
                     jumpIndex = startIndex + index;
-                    console.log('jump:' + jumpIndex);
                     slideTo(jumpIndex);
                 } else {
                     console.log('查找不对');
