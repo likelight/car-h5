@@ -157,13 +157,12 @@ $(function () {
     function preloadImg() {
         var queue = new createjs.LoadQueue();
         var mainfest = new Set();
-        var bgArr = ['./images/abg.jpg', './images/car1_03.png', './images/logo.png'];
+        var bgArr = ['./images/abg.jpg', './images/bg.jpeg','./images/car1_03.png', './images/logo.png'];
         $('img[lazy-src]').each(function (i, dom) {
             mainfest.add(dom.getAttribute('lazy-src'));
         });
         var sourceArr = Array.from(mainfest);
         var finalList = [...sourceArr, ...bgArr];
-        console.log(finalList);
         queue.loadManifest(Array.from(finalList));
         queue.on('progress', handleProgress);
         queue.on('complete', handleComplete, this);
@@ -180,6 +179,9 @@ $(function () {
             $(this).show();
             $(this).attr('src', $(this).attr('lazy-src'));
         });
+
+        parseUrl();
+
     }
 
     // 目录页码
@@ -232,7 +234,6 @@ $(function () {
         swiper.unlockSwipeToNext();
         swiper.unlockSwipeToPrev();
         
-        
         if (disableNextIndexArr.includes(num)) {
             $('.swiper-button-next').css('display', 'none');
             swiper.slideTo(num, TIME, false);
@@ -269,7 +270,6 @@ $(function () {
 
         $('.text').click(function () {
             let num = $(this).index() - 6;
-            console.log(num);
             slideTo(CatergoryIndex[num]);
         });
 
@@ -315,6 +315,20 @@ $(function () {
                 }
             }
         });
+    }
+
+    function parseUrl() {
+        let param = window.location.hash;
+        
+        let num = param.replace('#', '');
+        console.log(num);
+        if (num !== '') {
+            slideTo(parseInt(num));
+        } else {
+            return;
+        }
+        console.log("fd:" + num);
+
     }
 
     windowResize();
