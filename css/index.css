@@ -5,9 +5,8 @@ html, body {
 
 body {
     background: #fff;
-    font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
     font-size: 14px;
-    color: #000;
+    color: #3E3E3E;
     margin: 0;
     padding: 0;
 }
@@ -44,7 +43,7 @@ body {
 
 
 body {
-    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC","Helvetica Neue",STHeiti,"Microsoft Yahei",Tahoma,Simsun,sans-serif;
+    font-family: "Microsoft Yahei";
 }
 .car-main {
     background: url(../images/abg.jpg) no-repeat;
@@ -78,7 +77,7 @@ body {
  
     /* Safari and Chrome */
     -webkit-animation-name: breath;                 /* 动画名称 */
-    -webkit-animation-duration: 3s;                 /* 动画时长3秒 */
+    -webkit-animation-duration: 2s;                 /* 动画时长3秒 */
     -webkit-animation-timing-function: ease-in-out; /* 动画速度曲线：以低速开始和结束 */
     -webkit-animation-iteration-count: infinite; 
 }
@@ -159,8 +158,10 @@ body {
     background-size: cover;
 }
 
+
 .catergorty .title {
-    font-size: 40px;
+    font-size: 36px;
+    margin-top: 20px;
 }
 
 .bg-icon {
@@ -176,28 +177,24 @@ body {
 
 .content img {
     margin: 0 auto;
-    margin-bottom: 20px;
-    width: 60%;
 }
 
-.title {
-    font-size: 52px;
-    font-weight: 700px;
-    margin-bottom: 30px;
-    margin-top: 30px;
-    text-align: center;
-}
 
 .content .title {
-    font-size: 32px;
+    font-size: 24px;
+    font-weight: 700px;
     text-align: center;
-    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.content .sub-title {
+    font-size: 22px;
 }
 
 .content .describe {
     margin-left: 19px;
-    padding: 2px 40px;
-    margin-top: 60px;
+    padding: 2px 60px;
+    margin-top: 30px;
     font-size: 16px;
     text-align: left;
 }
@@ -227,6 +224,7 @@ body {
 .catergory-list {
     margin: 0 auto;
     padding: 0px;
+    margin-top: 30px;
     text-align: center;
 }
 
@@ -248,13 +246,31 @@ body {
     text-decoration: underline;
     border: none;
     position: absolute;
-    bottom: 15px;
-    left: 10px;
+    bottom: 20px;
+    left: 20px;
     font-size: 18px;
 }
 
+.image-wrap  {
+    min-height: 250px;
+    line-height: 250px;
+    margin-top: 40px;
+    margin-bottom: 20px;
+}
 
+.video-wrap {
+    min-height: 230px;
+    max-height: 250px;
+    margin-top: 40px;
+}
+.image-wrap  img {
+    vertical-align: middle;
+}
 
+.video-wrap  video{
+    width: 80%;
+  /*object-fit: cover;*/
+}
 /*.image-wrap {
     position: absolute;
 }

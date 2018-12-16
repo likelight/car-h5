@@ -3,7 +3,40 @@
 
 <head>
     <meta charset="utf-8">
-    <title>autoliv</title>
+    <!-- 避免IE使用兼容模式 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <!-- 启用360浏览器的极速模式(webkit) -->
+    <meta name="renderer" content="webkit">
+    <!-- 微软的老式浏览器 -->
+    <meta name="MobileOptimized" content="320">
+    <!-- 关键字描述 -->
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <!-- 设置移动端视图 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <!-- 针对手持设备优化，主要是针对一些老的不识别viewport的浏览器，比如黑莓 -->
+    <meta name="HandheldFriendly" content="true">
+    <!-- 删除苹果默认的工具栏和菜单栏 -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <!-- 设置苹果工具栏颜色 -->
+    <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+    <!-- 忽略页面中的数字识别为电话，忽略email识别 -->
+    <meta name="format-detection" content="telphone=no, email=no" />
+    <!-- uc强制竖屏 -->
+    <meta name="screen-orientation" content="portrait">
+    <!-- QQ强制竖屏 -->
+    <meta name="x5-orientation" content="portrait">
+  
+    <!-- UC应用模式 -->
+    <meta name="browsermode" content="application">
+    <!-- QQ应用模式 -->
+    <meta name="x5-page-mode" content="app">
+    <!-- windows phone 点击无高光 -->
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta http-equiv="expires" content="0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <title>奥托立夫</title>
     <script>
         ! function () {
             function e(e) {
@@ -30,7 +63,6 @@
         <div class="swiper-wrapper">
             <div class="swiper-slide swiper-no-swiping car-main" id="page1">
                 <!--汽车页面-->
-               
                 <div class="car">
                     <div class="point1 point"></div>
                     <div class="point5 point"></div>
@@ -38,14 +70,13 @@
                     <div class="point4 point"></div>
                     <div class="point2 point"></div>
                     <div class="point6 point"></div>
-                    <div  class="text text6">方向盘</div>
-                    <div  class="text text2">安全带</div>
-                    <div  class="text text5">主驾气囊</div>
-                    <div  class="text text3">副驾驶气囊</div>
+                    <div class="text text6">方向盘</div>
+                    <div class="text text2">安全带</div>
+                    <div class="text text5">主驾气囊</div>
+                    <div class="text text3">副驾驶气囊</div>
                     <div class="text text1">侧面气囊</div>
-                    <div  class="text text4">特殊产品</div>
+                    <div class="text text4">特殊产品</div>
                 </div>
-
             </div>
             <div class="swiper-slide  swiper-no-swiping catergorty" id="page2">
                 <!--目录一-->
@@ -63,7 +94,7 @@
             <div class="swiper-slide content" id="page3">
                 <div class="title">超纤皮方向盘</div>
                 <div class="image-wrap">
-                    <img lazy-src="./images/pan_02.png">
+                    <img lazy-src="./images/pan_02.png" style="width: 60%">
                 </div>
                 <div class="describe">
                     利用超纤皮最大程度代替真皮
@@ -80,7 +111,7 @@
             <div class="swiper-slide content" id="page4">
                 <div class="title">振动方向盘</div>
                 <div class="image-wrap">
-                    <img lazy-src="./images/pan_04.png">
+                    <img lazy-src="./images/pan_04.png" style="width: 60%">
                 </div>
                 <div class="describe">
                     <ul>
@@ -96,7 +127,7 @@
             <div class="swiper-slide content" id="page5">
                 <div class="title">加热方向盘</div>
                 <div class="image-wrap">
-                    <img lazy-src="./images/pan_2.jpg">
+                    <img lazy-src="./images/pan_2.jpg" style="width: 60%">
                 </div>
                 <div class="describe">
                     在发泡与缝皮间增加加热垫，改善寒冷天气握感
@@ -111,7 +142,7 @@
             <div class="swiper-slide content" id="page6">
                 <div class="title">HOD方向盘</div>
                 <div class="image-wrap">
-                    <img lazy-src="./images/pan_05.png">
+                    <img lazy-src="./images/pan_05.png" style="width: 60%">
                 </div>
                 <div class="describe">
                     通过电容传感器系统探测驾驶员双手是否握在方向盘上，减少不良习惯带来的驾驶事故
@@ -128,8 +159,13 @@
             <div class="swiper-slide content" id="page7">
                 <div class="title">zForce光感技术方向盘</div>
                 <div class="video-wrap">
-                    <video  id="video1" controls="controls"  src="https://h5-1251326386.cos.ap-shanghai.myqcloud.com/autoliv/zForce.mp4" width="70%">
-                            <!--<source src="./images/video/zForce.mp4" type="video/mp4">-->
+                    <video id="video1" 
+                    controls="controls" 
+                    playsinline="true" 
+                    webkit-playsinline="true" 
+                    poster="./images/video_pan.jpeg"
+                    src="https://h5-1251326386.cos.ap-shanghai.myqcloud.com/autoliv/zForce.mp4">
+                        <!--<source src="./images/video/zForce.mp4" type="video/mp4">-->
                     </video>
                 </div>
                 <div class="describe">
@@ -164,16 +200,21 @@
             <div class="swiper-slide content" id="page9">
                 <div class="title">主动式预紧安全带 PPMI</div>
                 <!--视频-->
-                <div class="image-wrap">
-                     <video  id="video1" controls="controls"  src="https://h5-1251326386.cos.ap-shanghai.myqcloud.com/autoliv/PPMI.mp4" width="70%">
-                            <!--<source src="./images/video/zForce.mp4" type="video/mp4">-->
+                <div class="video-wrap">
+                    <video id="video1" 
+                    controls="controls" 
+                    playsinline="true" 
+                    webkit-playsinline="true"
+                    poster="./images/video_ppmi.jpeg"
+                     src="https://h5-1251326386.cos.ap-shanghai.myqcloud.com/autoliv/PPMI.mp4">
+                        <!--<source src="./images/video/zForce.mp4" type="video/mp4">-->
                     </video>
                 </div>
                 <div class="describe">
                     <ul>
-                        <li>疲劳驾驶、车辆偏移时振动提醒驾驶员</li>
+                        <li>疲劳驾驶、车辆偏移时，振动提醒驾驶员</li>
                         <li>转向不足、转向过度、起伏路面时，提供支撑保护</li>
-                        <li>前方有可能发生的碰撞时，提前收紧安全带； 危险解除，安全带放松
+                        <li>前方有可能发生的碰撞时，提前收紧安全带;危险解除，安全带放松
                         </li>
                         <li>平缓回收，调节安全带约束力，避免织带松弛的搭在乘员身上</li>
                     </ul>
@@ -210,7 +251,7 @@
                                 <li>相比R200.2 RP，更方便线束安插
                                 </li>
                                 <li>可多角度安装，可多模块应用</li>
-                                <li>轻量化,相比R200.RP轻50克</li>
+                                <li>轻量化，相比R200.RP轻50克</li>
                                 <li>预紧量合理，更环保</li>
                     </ul>
                 </div>
@@ -275,7 +316,7 @@
                     降低乘员在碰撞事故胸部所承受的压力，臀部位移和大腿承受的压力，以及从安全带下滑出的风险
                     <ul>
                         <li>反应时间快速</li>
-                        <li>长230mm，宽275mm,高30mm</li>
+                        <li>长230mm，宽275mm，高30mm</li>
                         <li>预紧行程：100mm (≥90mm@ATS)
                         </li>
                         <li>锁止距离≤10mm</li>
@@ -313,7 +354,7 @@
                     <ul>
                         <li>快速：乘客能更快速系上安全带</li>
                         <li>便利：可与发光模块结合使用，在黑暗情况下，乘员更容易找到锁扣位置</li>
-                        <li>美观：发光模块提升车内氛围和科技感</li>
+                        <li>美观：发光模块可提升车内氛围和科技感</li>
                     </ul>
                 </div>
                 <div class="logo"></div>
@@ -375,7 +416,7 @@
                     降低乘员在碰撞事故胸部所承受的压力，臀部位移和大腿承受的压力，以及从安全带下滑出的风险
                     <ul>
                         <li>反应时间快速</li>
-                        <li>长230mm，宽275mm,高30mm</li>
+                        <li>长230mm，宽275mm，高30mm</li>
                         <li>预紧行程：100mm (≥90mm@ATS)
                         </li>
                         <li>锁止距离≤10mm</li>
@@ -404,7 +445,7 @@
             <div class="swiper-slide content" id="page23">
                 <div class="title">模块减振</div>
                 <div class="image-wrap">
-                    <img lazy-src="./images/zhu_04.png" style="width: 62%">
+                    <img lazy-src="./images/zhu_04.png" style="width: 68%; margin-top: 20px; margin-bottom: 40px;">
                 </div>
                 <div class="describe">
                     <ul>
@@ -492,7 +533,7 @@
                 <div class="describe">
                     <ul>
                         <li>可以应用于各种车型，例如MPV、普通家轿和大型 SUV，只需要调整气袋泄气孔和包形</li>
-                        <li>在一定布置条件下，性能上满足国内CNCAP五星,ENCAP五星，动态ECER21要求</li>
+                        <li>在一定布置条件下，性能上满足国内CNCAP五星，ENCAP五星，动态ECER21要求</li>
                         <li>低成本及轻量化
                         </li>
                     </ul>
@@ -518,8 +559,15 @@
             </div>
             <div class="swiper-slide content" id="page30">
                 <div class="title">Over Head顶棚气囊</div>
-                <div class="image-wrap">
-                    <video  id="video1" controls="controls"  src="https://h5-1251326386.cos.ap-shanghai.myqcloud.com/autoliv/Media2.mp4" width="70%">
+                <div class="video-wrap">
+                    <video height="230" 
+                    id="video1" 
+                    style="width: 60%;" 
+                    controls="controls" 
+                    playsinline="true" 
+                    poster="./images/video_nang.jpeg"
+                    webkit-playsinline="true" 
+                    src="https://h5-1251326386.cos.ap-shanghai.myqcloud.com/autoliv/Media2.mp4">
                     </video>
                 </div>
                 <div class="describe">
@@ -567,49 +615,76 @@
             </div>
             <div class="swiper-slide content" id="page33">
                 <div class="title">轻量化乘员气囊壳体</div>
+                <div class="sub-title">(金属框架壳体)</div>
                 <div class="image-wrap">
-                    <img lazy-src="./images/zhu_07.png" style="width: 50%">
+                    <img lazy-src="./images/cheng_08.png" style="width: 55%;">
                 </div>
                 <div class="describe">
                     <ul>
-                        <li>适用于主驾产品开发需求的成熟烟火式双级气体发生器</li>
-                        <li>产量大，组件少，成本合理</li>
-                        <li>尺寸适中，适用于大多数尺寸的造型
+                        <li>去除底部两区域的材料</li>
+                        <li>去除的材料用于侧壁</li>
+                        <li>壳体四周加入加强筋
                         </li>
-                        <li>压力（60L Tank）：230MPa。双极发生器使保压时间更长</li>
-                        <li>美标</li>
                     </ul>
                 </div>
                 <div class="logo"></div>
                 <div class="back">返回</div>
             </div>
             <div class="swiper-slide content" id="page34">
-                <div class="title">APG-1/APGs-1环保发生器</div>
+                <div class="title">轻量化乘员气囊壳体</div>
+                <div class="sub-title">(镂空塑料壳体)</div>
                 <div class="image-wrap">
-                    <img lazy-src="./images/cheng_06.png" style="width: 42%">
+                    <img lazy-src="./images/cheng_09.png" style="width: 55%;">
                 </div>
                 <div class="describe">
                     <ul>
-                        <li>点火后，气体从发生器两个腔体分别释放气体冲入气袋中，并发生化学反应，产生大量的热量和水，绿色环保无污染。发生器高温、常温、低温的性能非常接近，稳定。是Autoliv独有技术</li>
+                        <li>镂空结构, 去除多余材料</li>
                     </ul>
                 </div>
                 <div class="logo"></div>
                 <div class="back">返回</div>
             </div>
             <div class="swiper-slide content" id="page35">
+                <div class="title">轻量化乘员气囊壳体</div>
+                <div class="sub-title">(塑料框架壳体)</div>
+                <div class="image-wrap">
+                    <img lazy-src="./images/cheng_10.png" style="width: 55%;">
+                </div>
+                <div class="describe">
+                    <ul>
+                        <li>移除多余的材料，只保留能够支撑壳体结构的部分</li>
+                    </ul>
+                </div>
+                <div class="logo"></div>
+                <div class="back">返回</div>
+            </div>
+            <div class="swiper-slide content" id="page36">
+                <div class="title">APG-1/APGs-1环保发生器</div>
+                <div class="image-wrap">
+                    <img lazy-src="./images/cheng_06.png" style="width: 42%">
+                </div>
+                <div class="describe">
+                    <ul>
+                        <li>点火后，气体从发生器两个腔体分别释放气体冲入气袋中，并发生化学反应，产生大量的热量和水，绿色环保无污染。发生器高温、常温、低温的性能非常接近，稳定。是奥托立夫独有技术</li>
+                    </ul>
+                </div>
+                <div class="logo"></div>
+                <div class="back">返回</div>
+            </div>
+            <div class="swiper-slide content" id="page37">
                 <div class="title">APL(s)-2单双极混合气体发生器</div>
                 <div class="image-wrap">
                     <img lazy-src="./images/cheng_07.png" style="width: 50%">
                 </div>
                 <div class="describe">
                     <ul>
-                        <li>发生器内的液体过滤部分代替了金属过滤网，起到了冷却燃烧气体的作用。过滤部分受热蒸发,产生补充气体，降低了药片数量，减少点爆后发生器热量并降低对气袋冲击力</li>
+                        <li>发生器内的液体过滤部分代替了金属过滤网，起到了冷却燃烧气体的作用。过滤部分受热蒸发，产生补充气体，降低了药片数量，减少点爆后发生器热量并降低对气袋冲击力</li>
                     </ul>
                 </div>
                 <div class="logo"></div>
                 <div class="back">返回</div>
             </div>
-            <div class="swiper-slide  swiper-no-swiping catergorty" id="page36">
+            <div class="swiper-slide  swiper-no-swiping catergorty" id="page38">
                 <!--目录一-->
                 <div class="title">侧气囊&气帘</div>
                 <div class="logo"></div>
@@ -623,7 +698,7 @@
                 </ul>
                 <div class="back">返回</div>
             </div>
-            <div class="swiper-slide content" id="page37">
+            <div class="swiper-slide content" id="page39">
                 <div class="title">3D热压成型座椅侧气囊</div>
                 <div class="image-wrap">
                     <img lazy-src="./images/ce_01.png" style="width: 43%">
@@ -636,55 +711,68 @@
                 <div class="logo"></div>
                 <div class="back">返回</div>
             </div>
-            <div class="swiper-slide content" id="page38">
+            <div class="swiper-slide content" id="page40">
                 <div class="title">远端侧气囊</div>
-                <div class="image-wrap">
+                <div class="video-wrap">
                     <!--<img lazy-src="./images/ce_02.png" style="width: 50%">-->
-                    <video  id="video1" controls="controls"  src="https://h5-1251326386.cos.ap-shanghai.myqcloud.com/autoliv/Far-side-AB1.mp4" width="70%">
+                    <video id="video1" 
+                    controls="controls" 
+                    playsinline="true" 
+                    webkit-playsinline="true"
+                    poster="./images/video_yuan.jpg" 
+                    src="https://h5-1251326386.cos.ap-shanghai.myqcloud.com/autoliv/Far-side-AB1.mp4">
                     </video>
                 </div>
                 <div class="describe">
                     <ul>
                         <li>远端侧气囊可以避免乘员在侧碰发生时受到的二次伤害，防止同一排乘员间的相互撞击或乘员撞到另外一侧的门护板/B柱护板 </li>
-                        <li>Euro NCAP规定，2020年远端侧撞会计入25%（16分的1/4）的侧撞得分</li>
-                    </ul>
-                </div>
-                <div class="logo"></div>
-                <div class="back">返回</div>
-            </div>
-            <div class="swiper-slide content" id="page39">
-                <div class="title">Life-Cell全面包裹侧气囊</div>
-                <div class="image-wrap">
-                    <!--<img lazy-src="./images/ce_03.png" style="width: 42%">-->
-                    <video  id="video1" controls="controls"  src="https://h5-1251326386.cos.ap-shanghai.myqcloud.com/autoliv/LIFECELL.mp4" width="70%">
-                    </video>
-                </div>
-                <div class="describe">
-                    <ul>
-                        <li>将侧气帘、远端侧气囊和近端侧气囊集成在一个气囊上，形成360度的保护。全包裹碰撞中的乘员，形成全方位的保护</li>
-                        <li>成本低、重量轻， 皆低于前三者的总和</li>
-                    </ul>
-                </div>
-                <div class="logo"></div>
-                <div class="back">返回</div>
-            </div>
-            <div class="swiper-slide content" id="page40">
-                <div class="title">PPA-行人保护气囊</div>
-                <div class="image-wrap">
-                    <!--<img lazy-src="./images/ce_04.png" style="width: 55%">-->
-                    <video  id="video1" controls="controls"  src="https://h5-1251326386.cos.ap-shanghai.myqcloud.com/autoliv/air.mp4" width="70%">
-                    </video>
-                </div>
-                <div class="describe">
-                    <ul>
-                        <li>行人保护气囊可以置于挡风玻璃下部，当车辆在一定速度下撞及行人、自行车或摩托车时，实时展开，遮挡住A柱和挡风玻璃，减缓行人被车身硬质结构伤害。在40km/h头冲实验中 HIC<650</li>
-                        <li>气袋体积110L</li>
+                        <li>Euro NCAP规定，2020年远端侧撞计入25%（16分的1/4）的侧撞得分</li>
                     </ul>
                 </div>
                 <div class="logo"></div>
                 <div class="back">返回</div>
             </div>
             <div class="swiper-slide content" id="page41">
+                <div class="title">Life-Cell全面包裹侧气囊</div>
+                <div class="video-wrap">
+                    <!--<img lazy-src="./images/ce_03.png" style="width: 42%">-->
+                    <video id="video1" 
+                    controls="controls" 
+                    playsinline="true" 
+                    poster="./images/video_life.jpg"
+                    webkit-playsinline="true" src="https://h5-1251326386.cos.ap-shanghai.myqcloud.com/autoliv/LIFECELL.mp4">
+                    </video>
+                </div>
+                <div class="describe">
+                    <ul>
+                        <li>将侧气帘、远端侧气囊和近端侧气囊集成在一个气囊上，形成360度的保护。全包裹碰撞中的乘员，形成全方位的保护</li>
+                        <li>成本低、重量轻，低于前三者的总和</li>
+                    </ul>
+                </div>
+                <div class="logo"></div>
+                <div class="back">返回</div>
+            </div>
+            <div class="swiper-slide content" id="page42">
+                <div class="title">PPA-行人保护气囊</div>
+                <div class="video-wrap">
+                    <!--<img lazy-src="./images/ce_04.png" style="width: 55%">-->
+                    <video id="video1" 
+                    controls="controls" 
+                    poster="./images/video_protect.jpg"
+                    playsinline="true" webkit-playsinline="true" src="https://h5-1251326386.cos.ap-shanghai.myqcloud.com/autoliv/air.mp4">
+                    </video>
+                </div>
+                <div class="describe">
+                    <ul>
+                        <li>行人保护气囊可以置于挡风玻璃下部，当车辆在一定速度下撞及行人、自行车或摩托车时，实时展开，遮挡住A柱和挡风玻璃，减缓行人被车身硬质结构伤害。在40km/h头冲实验中 HIC
+                            <650</li>
+                                <li>气袋体积110L</li>
+                    </ul>
+                </div>
+                <div class="logo"></div>
+                <div class="back">返回</div>
+            </div>
+            <div class="swiper-slide content" id="page43">
                 <div class="title">引擎盖顶升机构HL</div>
                 <div class="image-wrap">
                     <img lazy-src="./images/ce_05.png" style="width: 50%">
@@ -697,7 +785,7 @@
                 <div class="logo"></div>
                 <div class="back">返回</div>
             </div>
-            <div class="swiper-slide content" id="page42">
+            <div class="swiper-slide content" id="page44">
                 <div class="title">ASP5.1B P12气体发生器</div>
                 <div class="image-wrap">
                     <img lazy-src="./images/ce_06.png" style="width: 75%">
@@ -714,7 +802,7 @@
                 <div class="logo"></div>
                 <div class="back">返回</div>
             </div>
-            <div class="swiper-slide  swiper-no-swiping catergorty" id="page43">
+            <div class="swiper-slide  swiper-no-swiping catergorty" id="page45">
                 <!--目录一-->
                 <div class="title">特殊安全</div>
                 <div class="logo"></div>
@@ -724,16 +812,18 @@
                 </ul>
                 <div class="back">返回</div>
             </div>
-            <div class="swiper-slide content" id="page44">
+            <div class="swiper-slide content" id="page46">
                 <div class="title">集成式儿童增高座垫</div>
-                <div class="image-wrap">
-                     <video  id="video1" controls="controls"  src="https://h5-1251326386.cos.ap-shanghai.myqcloud.com/autoliv/IBC.mp4" width="70%">
+                <div class="video-wrap">
+                    <video id="video1" 
+                    poster="./images/video_ertong_03.jpg"
+                    controls="controls" playsinline="true" webkit-playsinline="true" src="https://h5-1251326386.cos.ap-shanghai.myqcloud.com/autoliv/IBC.mp4">
                     </video>
                 </div>
                 <div class="describe">
                     <ul>
-                         <li>便利：避免拆装，在儿童和成人使用时轻松切换</li>
-                        <li>安全：适用于4至12岁儿童。分单、双级两种, 可根据儿童不同体型调节高度</li>
+                        <li>便利：避免拆装，在儿童和成人使用时轻松切换</li>
+                        <li>安全：适用于4至12岁儿童。分单、双级两种，可根据儿童不同体型调节高度</li>
                         <li>经济：可替代传统儿童安全座椅，释放更多后排空间
                         </li>
                     </ul>
@@ -741,10 +831,11 @@
                 <div class="logo"></div>
                 <div class="back">返回</div>
             </div>
-            <div class="swiper-slide content" id="page45">
+            <div class="swiper-slide content" id="page47">
                 <div class="title">PSS断电安全保护开关</div>
-                <div class="image-wrap">
-                    <video  id="video1" controls="controls"  src="https://h5-1251326386.cos.ap-shanghai.myqcloud.com/autoliv/PSS.mp4" width="70%">
+                <div class="video-wrap">
+                    <video id="video1" poster="./images/video_pss.jpg"
+                    controls="controls" playsinline="true" webkit-playsinline="true" src="https://h5-1251326386.cos.ap-shanghai.myqcloud.com/autoliv/PSS.mp4">
                     </video>
                 </div>
                 <div class="describe">
@@ -756,9 +847,7 @@
                 <div class="logo"></div>
                 <div class="back">返回</div>
             </div>
-
         </div>
-
         <div class="swiper-button-prev"></div>
         <div class="swiper-button-next"></div>
     </div>

@@ -157,7 +157,7 @@ $(function () {
     function preloadImg() {
         var queue = new createjs.LoadQueue();
         var mainfest = new Set();
-        var bgArr = ['./images/abg.jpg', './images/bg.jpeg','./images/car1_03.png', './images/logo.png'];
+        var bgArr = ['./images/abg.jpg', './images/bg.jpeg','./images/car1_04.png', './images/logo.png'];
         $('img[lazy-src]').each(function (i, dom) {
             mainfest.add(dom.getAttribute('lazy-src'));
         });
@@ -173,26 +173,30 @@ $(function () {
     }
 
     function handleComplete() {
-        createSwiper();
-        // 完成图片加载
-        $('img[lazy-src]').each(function () {
-            $(this).show();
-            $(this).attr('src', $(this).attr('lazy-src'));
-        });
+        setTimeout(function() {
+            createSwiper();
+            // 完成图片加载
+            $('img[lazy-src]').each(function () {
+                $(this).show();
+                $(this).attr('src', $(this).attr('lazy-src'));
+            });
 
-        parseUrl();
+            parseUrl();
+            }, 
+        500);
+
 
     }
 
     // 目录页码
-    const CatergoryIndex = [1, 7, 18, 26, 35, 42];
+    const CatergoryIndex = [1, 7, 18, 26, 37, 44];
     // 内容页起始页
-    const ContentStartIndex = [2, 8, 19, 27, 36, 43];
+    const ContentStartIndex = [2, 8, 19, 27, 38, 45];
 
     var swiper;
-    var disableNextIndexArr = [6, 17, 25, 34, 41, 45];
-    var disablePreIndexArr = [2, 8, 19, 27, 36, 43];
-
+    var disableNextIndexArr = [6, 17, 25, 36, 43, 46];
+    var disablePreIndexArr = [2, 8, 19, 27, 38, 45];
+    var videoListIndex = [6, 8, 29, 39, 40, 41, 45, 46]; 
     function createSwiper() {
         $('.swiper-container').removeClass('no-visible');
         $('#app').addClass('no-visible');
@@ -200,9 +204,27 @@ $(function () {
             // Enable debugger
             loop: false,
             debugger: false,
+            // effect : 'fade',
             prevButton: '.swiper-button-prev',
             nextButton: '.swiper-button-next',
             onSlideChangeEnd: function (swiper) {
+                var videolist = $(".video-wrap").find("video");
+                for(var k = 0; k<videolist.length; k++){
+                    videolist[k].pause();
+                }
+
+                // if (videoListIndex.includes(swiper.activeIndex)) {
+                //     console.log('hidden');
+                //     // $('.video-wrap').css('visibility', 'visible');
+                //     $('.video-wrap').find('video').show();
+                //     alert(1);
+
+                // } else {
+                //     //$('.video-wrap').css('visibility', 'hidden');
+                //     $('.video-wrap').find('video').hide();
+                // }
+
+
                 if (disableNextIndexArr.includes(swiper.activeIndex)) {
                     $('.swiper-button-next').css('display', 'none');
                     swiper.lockSwipeToNext();
@@ -284,6 +306,7 @@ $(function () {
         $('.content .back').click(function () {
             let num = $(this).parent().index();
             let caterIndex = 1;
+            console.log(num);
             for (var len = 0; len < CatergoryIndex.length; len++) {
                 if (num < CatergoryIndex[len]) {
                     caterIndex = CatergoryIndex[len - 1];
@@ -308,7 +331,11 @@ $(function () {
                 result = CatergoryIndex.indexOf(num);
                 if (result > -1) {
                     startIndex = ContentStartIndex[result];
-                    jumpIndex = startIndex + index;
+                    if (startIndex === 27 && index >= 6) {
+                        jumpIndex = startIndex + index + 2;
+                    } else {
+                        jumpIndex = startIndex + index;
+                    }
                     slideTo(jumpIndex);
                 } else {
                     console.log('查找不对');
